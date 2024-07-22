@@ -1,0 +1,87 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--train-images-dir", "data/train/images",
+                "--train-masks-dir", "data/train/masks",
+                "--val-images-dir", "data/test/images",
+                "--val-masks-dir", "data/test/masks",
+                "--resolution", "350",
+                "--epochs", "15",
+                "--batch-size", "16",
+                "--learning-rate", "0.0001",   //0.0001
+                "--momentum", "0.97",
+                "--workers", "4",
+                "--save-checkpoint",
+                "--amp",
+            ]
+        },
+        {
+            "name": "Train_small",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--train-images-dir", "data/train_small/images",
+                "--train-masks-dir", "data/train_small/masks",
+                "--val-images-dir", "data/test_small/images",
+                "--val-masks-dir", "data/test_small/masks",
+                "--resolution", "350",
+                "--epochs", "15",
+                "--batch-size", "16",
+                "--learning-rate", "0.0001",
+                "--momentum", "0.97",
+                "--workers", "4",
+                "--save-checkpoint",
+                "--amp",
+            ]
+        },
+        {
+            "name": "Predict",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "predict.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--model", "saved_models/model_5700_350_38 epoch.pth",
+                "--input", "data/test/images",
+                "--output", "data/test/predicts",
+                "--resolution", "350",
+                "--viz",
+                "--canny-path", "data/test/masks"
+
+            ]
+        },
+        {
+            "name": "Transform to Canny",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "canny_process.py",
+            "console": "integratedTerminal",
+        },
+        {
+            "name": "Canny experiment",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "canny_experiment.py",
+            "console": "integratedTerminal",
+        }
+    ]
+}
