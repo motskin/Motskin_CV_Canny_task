@@ -6,7 +6,7 @@ import os
 import cv2 as cv
 import numpy as np
 
-input_folder = "/home/motskin/test_tasks/Regula_Motskin_CV_Canny/data/temp"
+input_folder = "data/temp"
 
 thresh_1_default = 54
 thresh_2_default = 80

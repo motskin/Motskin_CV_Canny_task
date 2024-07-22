@@ -12,27 +12,6 @@
             "console": "integratedTerminal"
         },
         {
-            "name": "Train",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "train.py",
-            "console": "integratedTerminal",
-            "args": [
-                "--train-images-dir", "data/train/images",
-                "--train-masks-dir", "data/train/masks",
-                "--val-images-dir", "data/test/images",
-                "--val-masks-dir", "data/test/masks",
-                "--resolution", "350",
-                "--epochs", "15",
-                "--batch-size", "16",
-                "--learning-rate", "0.0001",   //0.0001
-                "--momentum", "0.97",
-                "--workers", "4",
-                "--save-checkpoint",
-                "--amp",
-            ]
-        },
-        {
             "name": "Train_small",
             "type": "debugpy",
             "request": "launch",
@@ -47,6 +26,27 @@
                 "--epochs", "15",
                 "--batch-size", "16",
                 "--learning-rate", "0.0001",
+                "--momentum", "0.97",
+                "--workers", "4",
+                "--save-checkpoint",
+                "--amp",
+            ]
+        },
+        {
+            "name": "Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--train-images-dir", "data/train/images",
+                "--train-masks-dir", "data/train/masks",
+                "--val-images-dir", "data/test/images",
+                "--val-masks-dir", "data/test/masks",
+                "--resolution", "350",
+                "--epochs", "15",
+                "--batch-size", "16",
+                "--learning-rate", "0.0001",   //0.0001
                 "--momentum", "0.97",
                 "--workers", "4",
                 "--save-checkpoint",

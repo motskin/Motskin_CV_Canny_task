@@ -25,9 +25,9 @@ def process_image(img_path:str):
     return edges
 
 def main():
-    input_folder = "/home/motskin/test_tasks/Regula_Motskin_CV_Canny/data/temp"
+    input_folder = "data/temp"
 
-    output_folder = "/home/motskin/test_tasks/Regula_Motskin_CV_Canny/data/canny"
+    output_folder = "data/canny"
     chunk_size = 1000
 
     if os.path.exists(output_folder):      # очищаем выходную папку, если она существует или создаём
